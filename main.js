@@ -14,15 +14,15 @@ $addList.addEventListener('click', () => {
         alert('내용을 입력하세요. ');
     }else{
         const $checkBox = document.createElement('input');     //list옆에 버튼추가
-        $checkBox.type = 'checkbox';      //버튼에 Clear라는 문구 표시
+        $checkBox.type = 'checkbox';      //체크박스 추가
         list.innerText = $inputField.value;    //<li>입력 값 </li>
         list.appendChild($checkBox);       //list에 버튼을 자식으로 추가
         $Lists.appendChild(list);              //Lists에 자식으로 붙이기
         $inputField.value = "";                //inputField 초기화
         
         
-        $checkBox.addEventListener('click', () =>{      // 만들어진 list에 클릭 이벤트가 발생하면 줄 긋기
-            if($checkBox.checked){
+        $checkBox.addEventListener('click', () =>{      // 만들어진 list에 체크박스상태 확인
+            if($checkBox.checked){      //체크가 안되어있으면 체크와 동시에 줄긋기
                 list.style.textDecoration = "line-through";
             }else{
                 list.style.textDecoration = "none";                
